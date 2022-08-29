@@ -27,6 +27,8 @@ public class MainCtrl implements Initializable {
 
   // DB par défaut
   final static private TypesDB DB_TYPE = TypesDB.MYSQL;
+  //final static private TypesDB DB_TYPE = TypesDB.HSQLDB;
+  //final static private TypesDB DB_TYPE = TypesDB.ACCESS;
 
   private DbWorkerItf dbWrk;
 
@@ -84,10 +86,10 @@ public class MainCtrl implements Initializable {
           dbWrk.connecterBdMySQL("223_personne_1table");
           break;
         case HSQLDB:
-          dbWrk.connecterBdHSQLDB("../data" + File.separator + "223_personne_1table");
+          dbWrk.connecterBdHSQLDB("C:\\Users\\ilievv01\\OneDrive - EDUETATFR\\modules\\ex2\\data\\hsqldb" + File.separator + "223_personne_1table");
           break;
         case ACCESS:
-          dbWrk.connecterBdAccess("../data" + File.separator + "223_Personne_1table.accdb");
+          dbWrk.connecterBdAccess("C:\\Users\\ilievv01\\OneDrive - EDUETATFR\\modules\\ex2\\data\\access" + File.separator + "223_Personne_1table.accdb");
           break;
         default:
           System.out.println("Base de données pas définie");
