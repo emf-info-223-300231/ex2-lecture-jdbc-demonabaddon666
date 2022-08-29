@@ -47,17 +47,17 @@ public class MainCtrl implements Initializable {
   @FXML
   public void actionPrevious(ActionEvent event) {
     try{
-     afficherPersonne(dbWrk.precedentPersonne());
-    }catch (MyDBException ex){
+      afficherPersonne(dbWrk.precedentPersonne());
+    }catch (Exception e){
 
     }
   }
 
   @FXML
   public void actionNext(ActionEvent event) {
-    try {
+    try{
       afficherPersonne(dbWrk.suivantPersonne());
-    } catch (MyDBException e) {
+    }catch (Exception e){
 
     }
   }
@@ -68,11 +68,13 @@ public class MainCtrl implements Initializable {
   }
 
   /*
-   * METHODES PRIVEES 
+   * METHODES PRIVEES
    */
   private void afficherPersonne(Personne p) {
-    txtPrenom.setText(p.getPrenom());
-    txtNom.setText(p.getNom());
+    if(p != null) {
+      txtNom.setText(p.getNom());
+      txtPrenom.setText(p.getPrenom());
+    }
   }
 
   private void ouvrirDB() {
