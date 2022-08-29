@@ -48,7 +48,7 @@ public class MainCtrl implements Initializable {
   public void actionPrevious(ActionEvent event) {
     try{
      afficherPersonne(dbWrk.precedentPersonne());
-    }catch (MyDBException e){
+    }catch (MyDBException ex){
 
     }
   }
